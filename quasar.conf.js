@@ -44,6 +44,8 @@ module.exports = function (ctx) {
         'QTd',
         'QInput',
         'QDate',
+        'QEditor',
+        'QField',
       ],
 
       directives: [

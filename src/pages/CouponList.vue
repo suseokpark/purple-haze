@@ -1,37 +1,37 @@
 <template>
-  <q-page class="flex flex-center">
-      <div class="todo">
-          쿠폰 관련 컴포넌트 적용 예정
-      </div>
-      <PopupEdit title="테이블 제목을 여기다 입력하세요."
-                 :columns="columns"
-                 :data="data"/>
-      <Calendar/>
-      <Editor/>
-  </q-page>
+  <div class="q-pa-md">
+    <q-btn label="검색" color="primary" @click="onRefresh" class="q-mb-md" />
+    <q-table
+      title="Treats"
+      :data="data"
+      :columns="columns"
+      row-key="name"
+      :loading="loading"
+    />
+  </div>
 </template>
 
-<style>
-</style>
-
 <script>
-import PopupEdit from '../components/PopupEdit';
-import Calendar from '../components/Calendar';
-import Editor from '../components/Editor';
-
 export default {
-  name: 'Coupon',
+  name: 'CouponList',
   data() {
     return {
+      loading: true,
       columns: [
         {
-          name: 'desc', align: 'left', label: 'Dessert (100g serving)', field: 'name',
+          name: 'desc',
+          required: true,
+          label: 'Dessert (100g serving)',
+          align: 'left',
+          field: row => row.name,
+          format: val => `${val}`,
+          sortable: true,
         },
         {
-          name: 'calories', align: 'center', label: 'Calories', field: 'calories',
+          name: 'calories', align: 'center', label: 'Calories', field: 'calories', sortable: true,
         },
         {
-          name: 'fat', label: 'Fat (g)', field: 'fat',
+          name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true,
         },
         {
           name: 'carbs', label: 'Carbs (g)', field: 'carbs',
@@ -43,10 +43,10 @@ export default {
           name: 'sodium', label: 'Sodium (mg)', field: 'sodium',
         },
         {
-          name: 'calcium', label: 'Calcium (%)', field: 'calcium',
+          name: 'calcium', label: 'Calcium (%)', field: 'calcium', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         },
         {
-          name: 'iron', label: 'Iron (%)', field: 'iron',
+          name: 'iron', label: 'Iron (%)', field: 'iron', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         },
       ],
       data: [
@@ -153,6 +153,17 @@ export default {
       ],
     };
   },
-  components: { PopupEdit, Calendar, Editor },
+  mounted() {
+    this.onRefresh();
+  },
+  methods: {
+    // emulate fetching data from server
+    onRefresh() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 5000);
+    },
+  },
 };
 </script>

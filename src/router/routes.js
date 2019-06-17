@@ -15,6 +15,13 @@ const routes = [
       { path: '', component: () => import('pages/Coupon.vue') },
     ],
   },
+  {
+    path: '/coupon-list',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/CouponList.vue') },
+    ],
+  },
 ];
 
 // Always leave this as last one
