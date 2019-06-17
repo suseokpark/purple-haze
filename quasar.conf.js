@@ -43,6 +43,7 @@ module.exports = function (ctx) {
         'QTr',
         'QTd',
         'QInput',
+        'QDate',
       ],
 
       directives: [
@@ -52,10 +53,11 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
 
       // iconSet: 'ionicons-v4'
       // lang: 'de' // Quasar language
+      lang: 'ko-kr',
     },
 
     supportIE: true,
