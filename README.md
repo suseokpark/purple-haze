@@ -15,7 +15,7 @@
     - store : 상태 관리
 
 
-## 주요 명렁어 
+## 주요 명령어
 1. 로컬 서버 실행
 `qusar dev`
 
@@ -27,3 +27,7 @@
 
 ## 퀘이사 컴포넌트 추가 방법
 quasar.conf.js 파일 상에 사용하는(화면 표시 시 오류 발생하는 컴포넌트 명 어레이 상 추가)
+
+## class 스타일에 todo 로 준 것 위주로 작업할 것
+## 샘플은 Coupon 관련해서 볼 것
+## 크롬 플러그인 [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?utm_source=chrome-ntp-icon) 설치할 것
