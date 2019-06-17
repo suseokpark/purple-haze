@@ -1,5 +1,6 @@
 # [Quasar](https://quasar.dev/introduction-to-quasar) App
 
+# 클론 후 해당 디렉토리에서 npm install 필수
 
 ## 주요디렉토리 구조
 
