@@ -1,5 +1,10 @@
 <template>
   <q-page class="flex flex-center">
+      <q-btn color="white" text-color="black" label="GET요청(console 참조)" @click="loadData" />
+      <q-btn color="white" text-color="black" label="POST요청(console 참조)" @click="postData" />
+      <q-btn color="white" text-color="black" label="PUT요청(console 참조)" @click="putData" />
+      <q-btn color="white" text-color="black" label="DELETE요청(console 참조)" @click="deleteData" />
+
       <div class="todo">
           쿠폰 관련 컴포넌트 적용 예정
       </div>
@@ -154,5 +159,27 @@ export default {
     };
   },
   components: { PopupEdit, Calendar, Editor },
+  methods: {
+    loadData() {
+      this.$axios.get('https://reqres.in/api/users')
+        .then(resp => console.log(resp.data));
+    },
+    postData() {
+      this.$axios.post('https://reqres.in/api/users', {
+        name: 'neo',
+        job: 'programmer',
+        id: 2981,
+      }).then(resp => console.log(resp.data));
+    },
+    putData() {
+      this.$axios.put('https://reqres.in/api/users/2', {
+        name: 'morpheus',
+        job: 'zion resident',
+      }).then(resp => console.log(resp.data));
+    },
+    deleteData() {
+      this.$axios.put('https://reqres.in/api/users/2').then(resp => console.log(resp.data));
+    },
+  },
 };
 </script>
