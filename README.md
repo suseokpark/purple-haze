@@ -31,3 +31,11 @@ quasar.conf.js 파일 상에 사용하는(화면 표시 시 오류 발생하는 
 ## class 스타일에 todo 로 준 것 위주로 작업할 것
 ## 샘플은 Coupon 관련해서 볼 것
 ## 크롬 플러그인 [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?utm_source=chrome-ntp-icon) 설치할 것
+
+## 화면 추가 방법
+1. ./src/router/routes.js 상에 내용 추가: 해당 파일 상 주석 확인
+2. ./src/pages 밑에 신규 Vue 파일 생성
+    'name' 등 목적에 맞게 변경
+    필요 시 component 추가 작성. 추가 작성 된 컴포넌트는 ./src/components에 추가(기존 내용 참조)
+    ✱ 컴포넌트 추가 시 퀘이사 컴포넌트 의존성 문제가 발생하면 위에 언급 된 퀘이사 컴포넌트 추가 방법 참조
+3. 메인 메뉴에 추가 시 page 경로를 ./src/layouts/MainLayout.vue 파일에 추가(기존 내용 참조)
