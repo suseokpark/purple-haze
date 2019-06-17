@@ -6,6 +6,7 @@
       <PopupEdit title="테이블 제목을 여기다 입력하세요."
                  :columns="columns"
                  :data="data"/>
+      <Calendar/>
   </q-page>
 </template>
 
@@ -14,6 +15,7 @@
 
 <script>
 import PopupEdit from '../components/PopupEdit';
+import Calendar from '../components/Calendar';
 
 export default {
   name: 'Coupon',
@@ -149,6 +151,6 @@ export default {
       ],
     };
   },
-  components: { PopupEdit },
+  components: { PopupEdit, Calendar },
 };
 </script>
